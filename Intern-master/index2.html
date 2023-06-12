@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .scroll-container {
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+
+      .scroll-content {
+        display: inline-block;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="./Menu.svg" alt="" />
+    </header>
+    <div class="container">
+      <img src="./slide1.png" alt="" />
+      <img src="./slide2.png" alt="" />
+      <img src="./slide3.png" alt="" />
+      <img src="./slide 4.png" alt="" />
+    </div>
+
+    <div class="scroll-container">
+      <div class="scroll-content">
+        <img src="./slide5.png" alt="" />
+        <img src="./slide6.png" alt="" />
+        <img src="./slide7.png" alt="" />
+        <img src="./slide8.png" alt="" />
+        <img src="./slide9.png" alt="" />
+      </div>
+    </div>
+   
+    <script>
+      function scrollHorizontally(e) {
+        e = window.event || e;
+        var delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
+
+        var scrollContainer = document.querySelector(".scroll-container");
+        scrollContainer.scrollLeft -= delta * 38; // Adjustment of  scrolling speed 
+        e.preventDefault();
+      }
+
+      // Add event listener to the scroll container
+      var scrollContainer = document.querySelector(".scroll-container");
+      if (scrollContainer.addEventListener) {
+        // For modern browsers
+        scrollContainer.addEventListener(
+          "mousewheel",
+          scrollHorizontally,
+          false
+        );
+        scrollContainer.addEventListener(
+          "DOMMouseScroll",
+          scrollHorizontally,
+          false
+        );
+      } else {
+        // For older  browsers
+        scrollContainer.attachEvent("onmousewheel", scrollHorizontally);
+      }
+    </script>
+  </body>
+</html>

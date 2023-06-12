@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 30px;
+            box-sizing: border-box;
+        }
+
+        /* to hide vertical scroll bar */
+        html::-webkit-scrollbar {
+
+            display: none;
+
+        }
+
+        /* to create navbar */
+        .navbar {
+            background: gray;
+            z-index: 10;
+            width: 100vw;
+            z-index: 10;
+            position: fixed;
+            top: 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: start;
+            padding: 3px;
+            height: 7vh;
+        }
+
+        .nav1,
+        .nav2,
+        .nav3,
+        .nav4,
+        .nav5 {
+            background: black;
+            width: 4rem;
+            margin-right: .2rem;
+            animation-name: example;
+            animation-duration: 0.5s;
+            display: block;
+
+        }
+
+        /* to create tabs  in navbar*/
+
+        @keyframes example {
+            from {
+                width: 0rem;
+            }
+
+            to {
+                width: 4rem;
+            }
+        }
+
+
+        /* to create h1 tag */
+        .para {
+            border: 5px solid grey;
+            border-right: 6px solid grey;
+            border-left: 6px solid grey;
+            background: black;
+            z-index: 10000;
+            width: 100%;
+        }
+
+        .parallaxone,
+        .parallaxtwo,
+        .parallaxthree {
+            width: 100%;
+            height: 100vh;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            margin-bottom: 11rem;
+            z-index: 20;
+        }
+
+
+        .parallaxtwo {
+            margin-bottom: 11rem;
+
+        }
+
+
+        .parallaxthree {
+            margin-bottom: 13rem;
+        }
+
+        .parallaxfour {
+            width: 100%;
+            height: 100vh;
+            background: black;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 8rem;
+        }
+
+
+
+        .parallaxfive {
+            width: 100%;
+            height: 900px;
+            background: black;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            margin-bottom: 0rem;
+            position: relative;
+
+
+        }
+
+
+        .parallaxone h2,
+        .parallaxtwo h2,
+        .parallaxthree h2,
+        .parallaxfour h2,
+        .parallaxfive h2 {
+            padding: 5px;
+            color: aliceblue;
+            text-align: center;
+
+        }
+
+        .img {
+            margin-left: 10.5rem;
+        }
+
+        .img1 {
+            margin-top: 0.7rem;
+        }
+
+
+
+        /* for carasouel effect on images */
+        .imgouterdiv {
+            display: flex;
+            flex-direction: row;
+            z-index: 50;
+            z-index: 0;
+            justify-content: space-between;
+            background: black;
+            overflow-x: scroll;
+            transform: scaleX(-1);
+            max-height: 50vh;
+        }
+
+
+        /* to hide horizontal scrollbar */
+        .imgouterdiv::-webkit-scrollbar {
+            display: none;
+
+        }
+
+        .blank {
+            max-width: 100%;
+            padding-right: 30rem;
+        }
+
+
+        .imgDiv5 {
+            margin-right: 18rem;
+        }
+
+        .imgDiv {
+            width: 100vw;
+            max-height: 100%;
+            margin-left: 13rem;
+
+        }
+
+        .imgDiv img {
+            transform: scaleX(-1);
+            height: 90%;
+        }
+
+
+
+
+
+        /* for gif or video*/
+        .video {
+            height: 800px;
+            margin-top: -18rem;
+            position: relative;
+        }
+
+        .video h2 {
+            position: absolute;
+            color: aliceblue;
+            height: 30px;
+            color: aliceblue;
+            text-align: center;
+            margin-top: -15rem;
+            margin-left: 7rem;
+
+        }
+
+        .gif {
+            margin-left: 7rem;
+            margin-top: 0rem;
+            margin-bottom: 10rem;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+    <nav class="navbar">
+        <div class="nav">
+            <div class="nav1" id="rad1"></div>
+            <div class="nav2" id="rad2"></div>
+            <div class="nav3" id="rad3"></div>
+            <div class="nav4" id="rad4"></div>
+            <div class="nav5" id="rad5"></div>
+        </div>
+    </nav>
+
+    <div class="para">
+
+
+        <div class="parallaxone" id="parallaxone">
+            <h2>This is the search engine where customers look for you</h2>
+            <img class="img" src="slide1.png" alt="photo" width="50%" />
+        </div>
+
+        <div class=" parallaxtwo" id="parallaxtwo">
+            <h2>Wow! They can find you in just a click in the language you know, but but but ……………..</h2>
+            <img class="img" src="slide2.png" alt="photo" width="50%" />
+        </div>
+
+        <div class="parallaxthree" id="parallaxthree">
+            <h2>But, they can’t find you in the language that they know and your website doesn’t</h2>
+            <img class="img" src="slide3.png" alt="photo" width="50%" />
+        </div>
+
+        <div class="parallaxfour" id="parallaxfour">
+            <h2>So what’s the solution for it? Easy! connect to Glocalise</h2>
+            <img class="img1" src="slide 4.png" alt="photo" height="40%" width="60%" />
+        </div>
+
+
+
+
+
+        <div class="parallaxfive" id="parallaxfive">
+            <h2>You connect your website with glocali.se and it becomes available in multiple languages</h2>
+            <div class="imgouterdiv">
+
+                <div class="blank"> </div>
+
+                <div class="imgDiv1 imgDiv">
+                    <img class="img2" src="slide5.png" alt="photo" width="full" />
+                </div>
+                <div class="imgDiv2 imgDiv">
+                    <img class="img3" src="slide6.png" alt="photo" width="full" />
+                </div>
+                <div class="imgDiv3 imgDiv">
+                    <img class="img4" src="slide7.png" alt="photo" width="full" />
+                </div>
+                <div class="imgDiv4 imgDiv">
+                    <img class="img5" src="slide8.png" alt="photo" width="full" />
+                </div>
+                <div class="imgDiv5 imgDiv" id="lastimg">
+                    <img class="img6" src="slide9.png" alt="photo" width="full" />
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="parallaxfive scrollable-div video" id="parallaxfive">
+            <video class="gif" height="800rem" width="800rem" loop autoplay muted>
+                <source src="gif.mp4.mp4" type="video/mp4">
+
+            </video>
+            <h2>Glocali.se, where local goes global and global, meets local.</h2>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        // window.scrollY calculates the distance by which window was scrolled
+        // console.log(window.innerHeight);
+
+
+        // to select playbackRate of gif(video)
+        document.querySelector('video').playbackRate = 3.5;
+
+
+        document.addEventListener("scroll", function () {
+            if (window.scrollY >= 3615.65478515625) {
+                document.getElementById("rad4").style.display = 'block';
+                document.getElementById("rad2").style.display = 'block';
+                document.getElementById("rad3").style.display = 'block';
+                document.getElementById("rad5").style.display = 'block';
+            }
+            else if (window.scrollY >= 2207.21875) {
+                document.getElementById("rad4").style.display = 'block';
+                document.getElementById("rad2").style.display = 'block';
+                document.getElementById("rad3").style.display = 'block';
+                document.getElementById("rad5").style.display = 'none';
+            }
+            else if (window.scrollY >= 1357.046630859375) {
+                document.getElementById("rad4").style.display = 'none';
+                document.getElementById("rad2").style.display = 'block';
+                document.getElementById("rad3").style.display = 'block';
+                document.getElementById("rad5").style.display = 'none';
+
+            }
+            else if (window.scrollY >= 417.3229370117188) {
+                document.getElementById("rad4").style.display = 'none';
+                document.getElementById("rad2").style.display = 'block';
+                document.getElementById("rad3").style.display = 'none';
+                document.getElementById("rad5").style.display = 'none';
+
+            }
+            else if (window.scrollY < 1063) {
+                document.getElementById("rad4").style.display = 'none';
+                document.getElementById("rad2").style.display = 'none';
+                document.getElementById("rad3").style.display = 'none';
+                document.getElementById("rad5").style.display = 'none';
+
+            }
+        });
+
+        window.addEventListener("message", function (event) {
+            var scrollPosition = event.data;
+            window.scrollTo(0, scrollPosition);
+        });
+
+
+
+
+
+    </script>
+</body>
+
+
+
+</html>

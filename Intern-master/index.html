@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Using the browser's scrollbar to scroll the content in an iframe</title>
+
+    <script>
+        window.onscroll = function () {
+            frames.ifr.document.documentElement.scrollTop = window.pageYOffset;
+            frames.ifr.document.body.scrolldown = window.pageYOffset;
+        }
+    </script>
+
+
+
+</head>
+
+<body style="background: black;">
+    <div id="iframe_container"
+        style="background: black;position: fixed; left: 10%; top: 50px; right: 10%; bottom: 64px;  display: flex; flex-direction: column; ">
+        <img src="Menu.svg" alt="photo" width="100%"
+            style=" border-left: 1.6px solid grey; border-right: 1.6px solid grey; border-top: 1.6px solid grey; border-bottom: 0;margin-bottom: 0; z-index: 1000" />
+        <iframe name="ifr" scrolling="no"
+            style="background: black;position: absolute; height:90%; width:100%;border-right:2px solid grey; border-bottom: 7px solid grey; top: 3.9rem; z-index: 100; margin-top: 0;"
+            src="test.html"
+            onload="document.body.style.height = frames.ifr.document.body.offsetHeight + parseInt(document.getElementById('iframe_container').style.top) + parseInt(document.getElementById('iframe_container').style.bottom) + 'px'">
+        </iframe>
+    </div>
+
+</body>
+
+</html>
